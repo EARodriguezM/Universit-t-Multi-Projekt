@@ -124,32 +124,32 @@
         }
       }
     },
-    "UsersWebsite": {
+    "Website": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "projects/UsersWebsite",
-      "sourceRoot": "projects/UsersWebsite/src",
+      "root": "projects/Website",
+      "sourceRoot": "projects/Website/src",
       "prefix": "w-chter",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/UsersWebsite",
-            "index": "projects/UsersWebsite/src/index.html",
-            "main": "projects/UsersWebsite/src/main.ts",
-            "polyfills": "projects/UsersWebsite/src/polyfills.ts",
-            "tsConfig": "projects/UsersWebsite/tsconfig.app.json",
+            "outputPath": "dist/Website",
+            "index": "projects/Website/src/index.html",
+            "main": "projects/Website/src/main.ts",
+            "polyfills": "projects/Website/src/polyfills.ts",
+            "tsConfig": "projects/Website/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "projects/UsersWebsite/src/favicon.ico",
-              "projects/UsersWebsite/src/assets"
+              "projects/Website/src/favicon.ico",
+              "projects/Website/src/assets"
             ],
             "styles": [
-              "projects/UsersWebsite/src/styles.scss"
+              "projects/Website/src/styles.scss"
             ],
             "scripts": []
           },
@@ -157,8 +157,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/UsersWebsite/src/environments/environment.ts",
-                  "with": "projects/UsersWebsite/src/environments/environment.prod.ts"
+                  "replace": "projects/Website/src/environments/environment.ts",
+                  "with": "projects/Website/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -187,33 +187,33 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "UsersWebsite:build"
+            "browserTarget": "Website:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "UsersWebsite:build:production"
+              "browserTarget": "Website:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "UsersWebsite:build"
+            "browserTarget": "Website:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/UsersWebsite/src/test.ts",
-            "polyfills": "projects/UsersWebsite/src/polyfills.ts",
-            "tsConfig": "projects/UsersWebsite/tsconfig.spec.json",
-            "karmaConfig": "projects/UsersWebsite/karma.conf.js",
+            "main": "projects/Website/src/test.ts",
+            "polyfills": "projects/Website/src/polyfills.ts",
+            "tsConfig": "projects/Website/tsconfig.spec.json",
+            "karmaConfig": "projects/Website/karma.conf.js",
             "assets": [
-              "projects/UsersWebsite/src/favicon.ico",
-              "projects/UsersWebsite/src/assets"
+              "projects/Website/src/favicon.ico",
+              "projects/Website/src/assets"
             ],
             "styles": [
-              "projects/UsersWebsite/src/styles.scss"
+              "projects/Website/src/styles.scss"
             ],
             "scripts": []
           }
@@ -222,9 +222,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/UsersWebsite/tsconfig.app.json",
-              "projects/UsersWebsite/tsconfig.spec.json",
-              "projects/UsersWebsite/e2e/tsconfig.json"
+              "projects/Website/tsconfig.app.json",
+              "projects/Website/tsconfig.spec.json",
+              "projects/Website/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -234,133 +234,12 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/UsersWebsite/e2e/protractor.conf.js",
-            "devServerTarget": "UsersWebsite:serve"
+            "protractorConfig": "projects/Website/e2e/protractor.conf.js",
+            "devServerTarget": "Website:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "UsersWebsite:serve:production"
-            }
-          }
-        }
-      }
-    },
-    "AdministratorsWebsite": {
-      "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
-      "root": "projects/AdministratorsWebsite",
-      "sourceRoot": "projects/AdministratorsWebsite/src",
-      "prefix": "w-chter",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/AdministratorsWebsite",
-            "index": "projects/AdministratorsWebsite/src/index.html",
-            "main": "projects/AdministratorsWebsite/src/main.ts",
-            "polyfills": "projects/AdministratorsWebsite/src/polyfills.ts",
-            "tsConfig": "projects/AdministratorsWebsite/tsconfig.app.json",
-            "aot": true,
-            "assets": [
-              "projects/AdministratorsWebsite/src/favicon.ico",
-              "projects/AdministratorsWebsite/src/assets"
-            ],
-            "styles": [
-              "projects/AdministratorsWebsite/src/styles.scss"
-            ],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/AdministratorsWebsite/src/environments/environment.ts",
-                  "with": "projects/AdministratorsWebsite/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "AdministratorsWebsite:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "AdministratorsWebsite:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "AdministratorsWebsite:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/AdministratorsWebsite/src/test.ts",
-            "polyfills": "projects/AdministratorsWebsite/src/polyfills.ts",
-            "tsConfig": "projects/AdministratorsWebsite/tsconfig.spec.json",
-            "karmaConfig": "projects/AdministratorsWebsite/karma.conf.js",
-            "assets": [
-              "projects/AdministratorsWebsite/src/favicon.ico",
-              "projects/AdministratorsWebsite/src/assets"
-            ],
-            "styles": [
-              "projects/AdministratorsWebsite/src/styles.scss"
-            ],
-            "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/AdministratorsWebsite/tsconfig.app.json",
-              "projects/AdministratorsWebsite/tsconfig.spec.json",
-              "projects/AdministratorsWebsite/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/AdministratorsWebsite/e2e/protractor.conf.js",
-            "devServerTarget": "AdministratorsWebsite:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "AdministratorsWebsite:serve:production"
+              "devServerTarget": "Website:serve:production"
             }
           }
         }

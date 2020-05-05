@@ -3,32 +3,34 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "LoginApi": {
+    "Multi-Projekt": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
           "style": "scss"
         }
       },
-      "root": "projects/LoginApi",
-      "sourceRoot": "projects/LoginApi/src",
-      "prefix": "w-chter",
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "Login-Api",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/LoginApi",
-            "index": "projects/LoginApi/src/index.html",
-            "main": "projects/LoginApi/src/main.ts",
-            "polyfills": "projects/LoginApi/src/polyfills.ts",
-            "tsConfig": "projects/LoginApi/tsconfig.app.json",
+            "outputPath": "dist/Multi-Projekt",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "projects/LoginApi/src/favicon.ico",
-              "projects/LoginApi/src/assets"
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-              "projects/LoginApi/src/styles.scss"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -36,8 +38,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/LoginApi/src/environments/environment.ts",
-                  "with": "projects/LoginApi/src/environments/environment.prod.ts"
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -66,33 +68,33 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "LoginApi:build"
+            "browserTarget": "Multi-Projekt:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "LoginApi:build:production"
+              "browserTarget": "Multi-Projekt:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "LoginApi:build"
+            "browserTarget": "Multi-Projekt:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/LoginApi/src/test.ts",
-            "polyfills": "projects/LoginApi/src/polyfills.ts",
-            "tsConfig": "projects/LoginApi/tsconfig.spec.json",
-            "karmaConfig": "projects/LoginApi/karma.conf.js",
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
             "assets": [
-              "projects/LoginApi/src/favicon.ico",
-              "projects/LoginApi/src/assets"
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-              "projects/LoginApi/src/styles.scss"
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -101,9 +103,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/LoginApi/tsconfig.app.json",
-              "projects/LoginApi/tsconfig.spec.json",
-              "projects/LoginApi/e2e/tsconfig.json"
+              "tsconfig.app.json",
+              "tsconfig.spec.json",
+              "e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -113,43 +115,45 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/LoginApi/e2e/protractor.conf.js",
-            "devServerTarget": "LoginApi:serve"
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "Multi-Projekt:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "LoginApi:serve:production"
+              "devServerTarget": "Multi-Projekt:serve:production"
             }
           }
         }
       }
     },
-    "Website": {
+    "w-chter": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
           "style": "scss"
         }
       },
-      "root": "projects/Website",
-      "sourceRoot": "projects/Website/src",
+      "root": "projects/w-chter",
+      "sourceRoot": "projects/w-chter/src",
       "prefix": "w-chter",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Website",
-            "index": "projects/Website/src/index.html",
-            "main": "projects/Website/src/main.ts",
-            "polyfills": "projects/Website/src/polyfills.ts",
-            "tsConfig": "projects/Website/tsconfig.app.json",
+            "outputPath": "dist/w-chter",
+            "index": "projects/w-chter/src/index.html",
+            "main": "projects/w-chter/src/main.ts",
+            "polyfills": "projects/w-chter/src/polyfills.ts",
+            "tsConfig": "projects/w-chter/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "projects/Website/src/favicon.ico",
-              "projects/Website/src/assets"
+              "projects/w-chter/src/favicon.ico",
+              "projects/w-chter/src/assets"
             ],
             "styles": [
-              "projects/Website/src/styles.scss"
+              "projects/w-chter/src/styles.scss"
             ],
             "scripts": []
           },
@@ -157,8 +161,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/Website/src/environments/environment.ts",
-                  "with": "projects/Website/src/environments/environment.prod.ts"
+                  "replace": "projects/w-chter/src/environments/environment.ts",
+                  "with": "projects/w-chter/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -187,33 +191,33 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Website:build"
+            "browserTarget": "w-chter:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Website:build:production"
+              "browserTarget": "w-chter:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Website:build"
+            "browserTarget": "w-chter:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/Website/src/test.ts",
-            "polyfills": "projects/Website/src/polyfills.ts",
-            "tsConfig": "projects/Website/tsconfig.spec.json",
-            "karmaConfig": "projects/Website/karma.conf.js",
+            "main": "projects/w-chter/src/test.ts",
+            "polyfills": "projects/w-chter/src/polyfills.ts",
+            "tsConfig": "projects/w-chter/tsconfig.spec.json",
+            "karmaConfig": "projects/w-chter/karma.conf.js",
             "assets": [
-              "projects/Website/src/favicon.ico",
-              "projects/Website/src/assets"
+              "projects/w-chter/src/favicon.ico",
+              "projects/w-chter/src/assets"
             ],
             "styles": [
-              "projects/Website/src/styles.scss"
+              "projects/w-chter/src/styles.scss"
             ],
             "scripts": []
           }
@@ -222,9 +226,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/Website/tsconfig.app.json",
-              "projects/Website/tsconfig.spec.json",
-              "projects/Website/e2e/tsconfig.json"
+              "projects/w-chter/tsconfig.app.json",
+              "projects/w-chter/tsconfig.spec.json",
+              "projects/w-chter/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -234,16 +238,139 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/Website/e2e/protractor.conf.js",
-            "devServerTarget": "Website:serve"
+            "protractorConfig": "projects/w-chter/e2e/protractor.conf.js",
+            "devServerTarget": "w-chter:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Website:serve:production"
+              "devServerTarget": "w-chter:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "TeachersRanking": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "style": "scss"
+        }
+      },
+      "root": "projects/TeachersRanking",
+      "sourceRoot": "projects/TeachersRanking/src",
+      "prefix": "TeachersRanking",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/TeachersRanking",
+            "index": "projects/TeachersRanking/src/index.html",
+            "main": "projects/TeachersRanking/src/main.ts",
+            "polyfills": "projects/TeachersRanking/src/polyfills.ts",
+            "tsConfig": "projects/TeachersRanking/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/TeachersRanking/src/favicon.ico",
+              "projects/TeachersRanking/src/assets"
+            ],
+            "styles": [
+              "projects/TeachersRanking/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/TeachersRanking/src/environments/environment.ts",
+                  "with": "projects/TeachersRanking/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "TeachersRanking:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "TeachersRanking:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "TeachersRanking:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/TeachersRanking/src/test.ts",
+            "polyfills": "projects/TeachersRanking/src/polyfills.ts",
+            "tsConfig": "projects/TeachersRanking/tsconfig.spec.json",
+            "karmaConfig": "projects/TeachersRanking/karma.conf.js",
+            "assets": [
+              "projects/TeachersRanking/src/favicon.ico",
+              "projects/TeachersRanking/src/assets"
+            ],
+            "styles": [
+              "projects/TeachersRanking/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/TeachersRanking/tsconfig.app.json",
+              "projects/TeachersRanking/tsconfig.spec.json",
+              "projects/TeachersRanking/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/TeachersRanking/e2e/protractor.conf.js",
+            "devServerTarget": "TeachersRanking:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "TeachersRanking:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "LoginApi"
+  "defaultProject": "Multi-Projekt"
 }

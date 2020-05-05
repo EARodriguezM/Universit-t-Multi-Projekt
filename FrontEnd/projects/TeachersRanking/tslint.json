@@ -1,0 +1,17 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "teachersRanking",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "teachers-ranking",
+      "kebab-case"
+    ]
+  }
+}

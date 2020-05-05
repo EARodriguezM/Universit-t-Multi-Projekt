@@ -21,7 +21,6 @@ namespace w_chter.Models.Wchter_Login
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Data Source=earodriguezm;Initial Catalog=W-chter_Login;User iD=sa;Password=qwzx25ERcv80;Trusted_Connection=False;");
             }
         }

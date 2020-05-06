@@ -10,3 +10,6 @@ export * from './lib/components/footer/footer.component';
 export * from './lib/components/header/header.component';
 export * from './lib/components/logout/logout.component';
 export * from './lib/components/reset-password/reset-password.component';
+
+//Interceptors
+export * from './lib/interceptors/token.interceptor'

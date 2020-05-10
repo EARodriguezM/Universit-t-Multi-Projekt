@@ -17,7 +17,7 @@ export class AppSelectorComponent implements OnInit {
     this.router.navigate(['teachers_ranking']);
   }
   goW_chter(){
-    this.router.parseUrl("http://localhost:4220");  
+    this.router.navigate(['w-chter']);  
   }
 
 

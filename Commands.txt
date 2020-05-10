@@ -18,7 +18,12 @@ ng g component auth/reset-password --module=auth
 ng g module appSelector --routing=true --module=app --route=app-routing
 
 ng g module w_chter --routing=true --module=appSelector --route=app-routing
+ng g module app-selector/teachers_ranking --routing=true --module=app-selector --route=app-routing
 
 ng g interceptor interceptors/token --project=shared
+
+/*FuckingHeader*/
+
+git checkout -b "StupidDashboard"
 
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'login-api-app-selector',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppSelectorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+
+  goTeachersRanking(){
+    this.router.navigate(['teachers_ranking']);
+  }
+  goW_chter(){
+    this.router.parseUrl("http://localhost:4220");  
+  }
+
 
 }

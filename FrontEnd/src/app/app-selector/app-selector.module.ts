@@ -8,6 +8,7 @@ import { ComponentsModule } from "../../../projects/shared/src/public-api";
 
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { TokenInterceptor } from "../../../projects/shared/src/public-api";
+import { NbLayoutModule } from "@nebular/theme";
 
 @NgModule({
   declarations: [AppSelectorComponent],
@@ -15,14 +16,7 @@ import { TokenInterceptor } from "../../../projects/shared/src/public-api";
     CommonModule,
     AppSelectorRoutingModule,
     ComponentsModule,
-    HttpClientModule
-  ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptor,
-      multi: true
-    }
+    NbLayoutModule
   ]
 })
 export class AppSelectorModule { }

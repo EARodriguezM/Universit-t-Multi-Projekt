@@ -1,0 +1,24 @@
+[earodriguezm@earodriguezm FrontEnd]$ ng new Multi-Projekt -p login-api --routing=true --directory=FrontEnd
+[earodriguezm@earodriguezm FrontEnd]$ cd FrontEnd/
+[earodriguezm@earodriguezm FrontEnd]$ ng g application w-chter -p w-chter --routing true
+[earodriguezm@earodriguezm FrontEnd]$ ng g application TeachersRanking -p TeachersRanking --routing true
+[earodriguezm@earodriguezm FrontEnd]$ ng g library shared
+
+[earodriguezm@earodriguezm FrontEnd]$ ng g module components --project=shared
+ng g component components/header --project=shared
+ng g component components/footer --project=shared
+
+ng g module auth --routing=true --module=app --route=app-routing
+ng g component auth/login --module=auth
+ng g component auth/request-password --module=auth
+ng g component auth/activate-user --module=auth
+ng g component auth/logout --module=auth
+ng g component auth/reset-password --module=auth
+
+ng g module appSelector --routing=true --module=app --route=app-routing
+
+ng g module w_chter --routing=true --module=appSelector --route=app-routing
+
+ng g interceptor interceptors/token --project=shared
+
+

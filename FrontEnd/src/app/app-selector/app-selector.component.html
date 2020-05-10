@@ -1,4 +1,8 @@
-<lib-header></lib-header>
+<!--<lib-header></lib-header>-->
+<nb-layout>
+  <nb-layout-header fixed></nb-layout-header>
+  <nb-layout-column>
+<div class="imagenBackground">
 <div class="container">
     <div class="card">
       <h2>Wächter</h2>
@@ -36,14 +40,12 @@
         <i class="fab fa-instagram"></i>
         <i class="fab fa-github"></i>
       </div>
-      <button>
-      </button>
+      <button (click) = "goW_chter()"></button>
     </div>
       <div class="card card2">
       <h2>Teachers Ranking</h2>
       <i class="fas fa-arrow-right"></i>
       <p>Entra y evalua a tus docentes!</p>
-      
       <div class="pic"></div>
       <ul>
         <li></li>
@@ -76,9 +78,11 @@
         <i class="fab fa-instagram"></i>
         <i class="fab fa-github"></i>
       </div>
-      <button>
-      </button>
+      <button (click) = "goTeachersRanking()" ></button>
     </div>
   </div>
+</div>
+</nb-layout-column>
+</nb-layout>
   
-<lib-footer></lib-footer>
+<!--<lib-footer></lib-footer>-->

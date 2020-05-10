@@ -9,12 +9,12 @@ const routes: Routes = [
     .then(m => m.AuthModule) 
   }, 
   { 
-    path: 'app-selector', 
+    path: 'app', 
     loadChildren: () => import('./app-selector/app-selector.module')
     .then(m => m.AppSelectorModule) 
   },
-  { path: '', redirectTo: 'app-selector', pathMatch: 'full' },
-  { path: '**', redirectTo: 'app-selector' },
+  { path: '', redirectTo: 'app', pathMatch: 'full' },
+  { path: '**', redirectTo: 'app' },
 ];
 
 @NgModule({

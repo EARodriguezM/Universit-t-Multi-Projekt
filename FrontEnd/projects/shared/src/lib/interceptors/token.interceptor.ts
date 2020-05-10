@@ -47,7 +47,7 @@ export class TokenInterceptor implements HttpInterceptor {
       catchError((error: HttpErrorResponse) => {
         console.log(error);
         if (error.status === 401) {
-          this.router.navigate(['auth/login']);
+          this.router.navigateByUrl("localhost:4200/auth/login");
         }
         if (error.status === 400) {
           alert(error.error);

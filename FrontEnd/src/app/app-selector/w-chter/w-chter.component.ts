@@ -7,13 +7,8 @@ import { MENU_ITEMS } from "./pages/pages-menu";
   templateUrl: './w-chter.component.html',
   styleUrls: ['./w-chter.component.scss']
 })
-export class WChterComponent implements OnInit {
+export class WChterComponent{
 
   menu = MENU_ITEMS;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

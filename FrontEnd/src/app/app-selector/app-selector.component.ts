@@ -14,10 +14,10 @@ export class AppSelectorComponent implements OnInit {
   }
 
   goTeachersRanking(){
-    this.router.navigate(['teachers_ranking']);
+    this.router.navigate(['app/teachers_ranking']);
   }
   goW_chter(){
-    this.router.navigate(['w-chter']);  
+    this.router.navigate(['/app/w-chter']);  
   }
 
 

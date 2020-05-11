@@ -25,5 +25,6 @@ ng g interceptor interceptors/token --project=shared
 /*FuckingHeader*/
 
 git checkout -b "StupidDashboard"
+git push --set-upstream origin StupidDashboard
 
 

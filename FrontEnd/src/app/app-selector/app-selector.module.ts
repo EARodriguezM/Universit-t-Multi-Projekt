@@ -9,6 +9,8 @@ import { ComponentsModule } from "../../../projects/shared/src/public-api";
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { TokenInterceptor } from "../../../projects/shared/src/public-api";
 import { NbLayoutModule } from "@nebular/theme";
+import { ThemeModule } from "./w-chter/@theme/theme.module";
+
 
 @NgModule({
   declarations: [AppSelectorComponent],
@@ -16,7 +18,8 @@ import { NbLayoutModule } from "@nebular/theme";
     CommonModule,
     AppSelectorRoutingModule,
     ComponentsModule,
-    NbLayoutModule
+    NbLayoutModule,
+    ThemeModule
   ]
 })
 export class AppSelectorModule { }

@@ -9,12 +9,12 @@ const routes: Routes = [
     component: AppSelectorComponent 
   },
   { 
-    path: 'teachers_ranking', 
+    path: 'w-chter', 
     loadChildren: () => import('./w-chter/w-chter.module')
     .then(m => m.WChterModule) 
   },
   { 
-    path: 'w-chter', 
+    path: 'teachers_ranking', 
     loadChildren: () => import('./teachers-ranking/teachers-ranking.module')
     .then(m => m.TeachersRankingModule) 
   },

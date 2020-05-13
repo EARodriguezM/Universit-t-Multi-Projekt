@@ -108,7 +108,7 @@ export class EarningPieChartComponent implements AfterViewInit, OnDestroy {
               },
               itemStyle: {
                 normal: {
-                  color: new graphic.LinearGradient(0, 0, 0, 1, [
+                  color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                     {
                       offset: 0,
                       color: earningPie.firstPieGradientLeft,
@@ -145,7 +145,7 @@ export class EarningPieChartComponent implements AfterViewInit, OnDestroy {
               },
               itemStyle: {
                 normal: {
-                  color: new graphic.LinearGradient(0, 0, 0, 1, [
+                  color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                     {
                       offset: 0,
                       color: earningPie.secondPieGradientLeft,
@@ -182,7 +182,7 @@ export class EarningPieChartComponent implements AfterViewInit, OnDestroy {
               },
               itemStyle: {
                 normal: {
-                  color: new graphic.LinearGradient(0, 0, 0, 1, [
+                  color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                     {
                       offset: 0,
                       color: earningPie.thirdPieGradientLeft,

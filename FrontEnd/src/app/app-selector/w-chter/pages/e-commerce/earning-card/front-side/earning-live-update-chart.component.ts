@@ -126,7 +126,7 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
           },
           areaStyle: {
             normal: {
-              color: new graphic.LinearGradient(0, 0, 0, 1, [{
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                 offset: 0,
                 color: earningLineTheme.gradFrom,
               }, {

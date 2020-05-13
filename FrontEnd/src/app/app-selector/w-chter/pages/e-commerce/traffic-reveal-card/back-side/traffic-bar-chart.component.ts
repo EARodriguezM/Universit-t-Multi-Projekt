@@ -126,7 +126,7 @@ export class TrafficBarChartComponent implements AfterViewInit, OnDestroy, OnCha
               data: this.data,
               itemStyle: {
                 normal: {
-                  color: new graphic.LinearGradient(0, 0, 0, 1, [{
+                  color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                     offset: 0,
                     color: trafficTheme.gradientFrom,
                   }, {

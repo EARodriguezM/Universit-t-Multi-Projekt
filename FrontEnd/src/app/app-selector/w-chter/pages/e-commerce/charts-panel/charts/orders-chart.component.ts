@@ -161,7 +161,7 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy, OnChanges
       },
       areaStyle: {
         normal: {
-          color: new graphic.LinearGradient(0, 0, 0, 1, [{
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
             offset: 0,
             color: eTheme.firstAreaGradFrom,
           }, {
@@ -195,7 +195,7 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy, OnChanges
         normal: {
           width: eTheme.lineWidth,
           type: eTheme.lineStyle,
-          color: new graphic.LinearGradient(0, 0, 0, 1, [{
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
             offset: 0,
             color: eTheme.secondLineGradFrom,
           }, {
@@ -206,7 +206,7 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy, OnChanges
       },
       areaStyle: {
         normal: {
-          color: new graphic.LinearGradient(0, 0, 0, 1, [{
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
             offset: 0,
             color: eTheme.secondAreaGradFrom,
           }, {
@@ -239,7 +239,7 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy, OnChanges
         normal: {
           width: eTheme.lineWidth,
           type: eTheme.lineStyle,
-          color: new graphic.LinearGradient(0, 0, 0, 1, [{
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
             offset: 0,
             color: eTheme.thirdLineGradFrom,
           }, {
@@ -250,7 +250,7 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy, OnChanges
       },
       areaStyle: {
         normal: {
-          color: new graphic.LinearGradient(0, 0, 0, 1, [{
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
             offset: 0,
             color: eTheme.thirdAreaGradFrom,
           }, {

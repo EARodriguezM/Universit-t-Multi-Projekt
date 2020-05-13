@@ -151,7 +151,7 @@ export class CountryOrdersChartComponent implements AfterViewInit, OnDestroy, On
               cursor: 'default',
               itemStyle: {
                 normal: {
-                  color: new graphic.LinearGradient(1, 0, 0, 0, [{
+                  color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [{
                     offset: 0,
                     color: countriesTheme.chartGradientFrom,
                   }, {

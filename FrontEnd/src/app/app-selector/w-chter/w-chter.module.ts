@@ -9,6 +9,8 @@ import { ECommerceModule } from './pages/e-commerce/e-commerce.module';
 import { MiscellaneousModule } from './pages/miscellaneous/miscellaneous.module';
 import { ThemeModule } from './@theme/theme.module';
 import { NbMenuModule } from '@nebular/theme';
+import { NbIconModule } from '@nebular/theme';
+
 
 
 
@@ -22,6 +24,7 @@ import { NbMenuModule } from '@nebular/theme';
     DashboardModule,
     ECommerceModule,
     MiscellaneousModule,
+    NbIconModule
   ]
 })
 export class WChterModule { }

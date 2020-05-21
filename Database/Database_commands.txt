@@ -1,0 +1,1 @@
+pg_ctl -D /home/EARodriguezM_Private/Source/Projects/W-chter/Database/data -l logfile start

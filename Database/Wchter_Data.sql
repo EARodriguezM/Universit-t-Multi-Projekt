@@ -1,8 +1,8 @@
 USE [master]
 GO
-CREATE DATABASE [W-chter_Data]
+CREATE DATABASE [Wchter_Data]
 GO
-USE [W-chter_Data]
+USE [Wchter_Data]
 GO
 -------------------------------Structure-------------------------------------------------------
 SET ANSI_NULLS ON

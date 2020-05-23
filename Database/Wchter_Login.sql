@@ -1,8 +1,8 @@
 USE [master]
 GO
-CREATE DATABASE [W-chter_Login]
+CREATE DATABASE [Wchter_Login]
 GO
-USE [W-chter_Login]
+USE [Wchter_Login]
 GO
 -------------------------------------------------------------------------------------------
 SET ANSI_NULLS ON

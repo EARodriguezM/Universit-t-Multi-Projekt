@@ -48,5 +48,7 @@ Turn off this advice by setting config variable advice.detachedHead to false
 HEAD is now at 37f8d6a More close to the fucking dashboard
 
 
+dotnet aspnet-codegenerator controller -name UserLoginController -api -async -m Wchter.Entities.Wchter_Login.UserLogin -dc Wchter_LoginContext -namespace Wchter.Controllers.Wchter_Login -outDir Controllers/Wchter_Login
+
 
 

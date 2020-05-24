@@ -1,4 +1,4 @@
-USE [Wchter_Data]
+USE [WchterData]
 GO
 INSERT INTO Faculty(Name,Status) VALUES ('Facultad de Ciencias Básicas y de Educación', 1);
 INSERT INTO Faculty(Name,Status) VALUES ('Facultad de Bellas Artes', 1);

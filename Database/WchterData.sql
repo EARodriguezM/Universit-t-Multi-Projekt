@@ -1,8 +1,8 @@
 USE [master]
 GO
-CREATE DATABASE [Wchter_Data]
+CREATE DATABASE [WchterData]
 GO
-USE [Wchter_Data]
+USE [WchterData]
 GO
 -------------------------------Structure-------------------------------------------------------
 SET ANSI_NULLS ON
@@ -109,7 +109,7 @@ GO
 CREATE TABLE [UserType](
 	[UserTypeId] tinyint NOT NULL,
 	[Description] nvarchar(20) NOT NULL,
-    [Status] bit NOT NULL,
+    [Status] bit DEFAULT 1 NOT NULL,
     CONSTRAINT UserTypePk PRIMARY KEY (UserTypeId),
     CONSTRAINT UserType_DescriptionUk UNIQUE ([Description]),
     CONSTRAINT UserType_StatusCk CHECK([Status] = 1 OR [Status] = 0)
@@ -124,22 +124,11 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [UserData](
-	[UserDataId] nvarchar(10) NOT NULL,
-	[FirstName] nvarchar(50) NOT NULL,
-    [SecondName] nvarchar(50) NOT NULL,
-	[FirstSurname] nvarchar(50) NOT NULL,
-	[SecondSurname] nvarchar(50) NOT NULL,
-	[Email] nvarchar(50) NOT NULL,
-	[ProfilePicture] image NOT NULL,
-    [IsRegistered] bit NOT NULL,
+CREATE TABLE [R_UserUserType](
+	[UserId] nvarchar(10) NOT NULL,
 	[UserTypeId] tinyint NOT NULL,
-    [Status] bit DEFAULT 1 NOT NULL,
-    CONSTRAINT UserDataPk PRIMARY KEY (UserDataId),
-    CONSTRAINT UserData_EmailUk UNIQUE (Email),
-    CONSTRAINT UserData_EmailCk CHECK(EMAIL LIKE '%@%.%'),
-    CONSTRAINT UserData_UserTypeIdFk FOREIGN KEY ([UserTypeId])  REFERENCES UserType(UserTypeId),
-    CONSTRAINT UserData_StatusCk CHECK([Status] = 1 OR [Status] = 0)
+    CONSTRAINT UserDataPk PRIMARY KEY (UserId),
+    CONSTRAINT UserData_UserTypeIdFk FOREIGN KEY ([UserTypeId])  REFERENCES UserType(UserTypeId)
 );
 GO
 SET ANSI_PADDING OFF
@@ -147,14 +136,14 @@ GO
 ---------------------------------------------------------
 ---------------------------------
 CREATE FUNCTION IsTeacher(
-    @UserDataId nvarchar(10)
+    @UserId nvarchar(10)
 )
 RETURNS INT
 AS
 BEGIN
     RETURN (SELECT TOP 1 UserTypeId 
-    FROM UserData
-    WHERE UserDataId = @UserDataId
+    FROM R_UserUserType
+    WHERE UserId = @UserId
     ORDER BY UserTypeId ASC)
 END
 GO
@@ -166,11 +155,11 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [R_TeacherSubject](
-	[UserDataId] nvarchar(10) NOT NULL,
+	[UserId] nvarchar(10) NOT NULL,
     [SubjectId] nvarchar(7) NOT NULL,
     [SemesterId] int NOT NULL,
     [Status] bit DEFAULT 1 NOT NULL,
-    CONSTRAINT R_TeacherSubject_UserDataIdFk FOREIGN KEY ([UserDataId]) REFERENCES UserData(UserDataId),
+    CONSTRAINT R_TeacherSubject_UserDataIdFk FOREIGN KEY ([UserId]) REFERENCES R_UserUserType(UserId),
     CONSTRAINT R_TeacherSubject_SubjectIdFk FOREIGN KEY ([SubjectId]) REFERENCES Subject(SubjectId),
     CONSTRAINT R_TeacherSubject_SemesterIdFk FOREIGN KEY ([SemesterId]) REFERENCES SemesterLog(SemesterId),
     CONSTRAINT R_TeacherSubject_StatusCk CHECK([Status] = 1 OR [Status] = 0)
@@ -179,7 +168,7 @@ GO
 SET ANSI_PADDING OFF
 GO
 ALTER TABLE [R_TeacherSubject]
-ADD CONSTRAINT R_TeacherSubject_IsTeacher CHECK(dbo.IsTeacher(UserDataId) BETWEEN 2 AND 3)
+ADD CONSTRAINT R_TeacherSubject_IsTeacher CHECK(dbo.IsTeacher(UserId) BETWEEN 2 AND 3)
 GO
 ---------------------------------------------------------
 SET ANSI_NULLS ON
@@ -190,11 +179,11 @@ SET ANSI_PADDING ON
 GO
 CREATE TABLE [Tag](
 	[TagId] int IDENTITY(1,1) NOT NULL,
-	[UserDataId] nvarchar(10) NOT NULL,
+	[UserId] nvarchar(10) NOT NULL,
     [Tag] nvarchar(45) NOT NULL,
     [Status] bit DEFAULT 1 NOT NULL,
     CONSTRAINT TagPk PRIMARY KEY ([TagId]),
-    CONSTRAINT Tag_UserDataIdFk FOREIGN KEY ([UserDataId]) REFERENCES UserData(UserDataId),
+    CONSTRAINT Tag_UserDataIdFk FOREIGN KEY ([UserId]) REFERENCES R_UserUserType(UserId),
     CONSTRAINT Tag_StatusCk CHECK([Status] = 1 OR [Status] = 0),
 );
 GO

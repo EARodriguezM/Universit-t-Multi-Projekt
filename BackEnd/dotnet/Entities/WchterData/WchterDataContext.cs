@@ -2,16 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-using Microsoft.Extensions.Configuration;
-
 namespace Wchter.Entities.WchterData
 {
     public partial class WchterDataContext : DbContext
     {
-        protected readonly IConfiguration _configuration;
-        public WchterDataContext(IConfiguration configuration)
+        public WchterDataContext()
         {
-            _configuration = configuration;
         }
 
         public WchterDataContext(DbContextOptions<WchterDataContext> options)
@@ -30,14 +26,6 @@ namespace Wchter.Entities.WchterData
         public virtual DbSet<Subject> Subject { get; set; }
         public virtual DbSet<Tag> Tag { get; set; }
         public virtual DbSet<UserType> UserType { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer(_configuration.GetConnectionString("WchterData"));
-            }
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

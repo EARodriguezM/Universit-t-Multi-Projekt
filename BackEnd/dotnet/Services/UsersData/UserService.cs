@@ -15,7 +15,7 @@ namespace Wchter.Services.UsersData
         User Login(string username, string password);
         IEnumerable<User> GetUsers();
         User GetUser(string userId);
-        User Create(User user, string password);
+        User Create(User user);
         User Activate(User user, string password);
         bool Update(User userNewInfo, string oldPassword, string newPassword);
         bool Delete(string userId);
@@ -64,12 +64,9 @@ namespace Wchter.Services.UsersData
         }
 
         //POST
-        public User Create(User user, string password)
+        public User Create(User user)
         {
             // validation
-            if (string.IsNullOrWhiteSpace(password))
-                throw new AppException("Password is required");
-            
             if (_contextUsersData.User.Any(x => x.UserId == user.UserId))
                 throw new AppException("The user with id \"" + user.UserId + "\" is already exist");
 
@@ -78,8 +75,8 @@ namespace Wchter.Services.UsersData
 
             if (_contextUsersData.User.Any(x => x.EmailPersonal == user.EmailPersonal))
                 throw new AppException("Email \"" + user.EmailPersonal + "\" is already taken");
-            
 
+            user.IsActivated = false;
             _contextUsersData.User.Add(user);
             _contextUsersData.SaveChanges();
 

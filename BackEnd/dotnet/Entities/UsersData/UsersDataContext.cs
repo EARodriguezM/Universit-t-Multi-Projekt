@@ -2,16 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-using Microsoft.Extensions.Configuration;
-
 namespace Wchter.Entities.UsersData
 {
     public partial class UsersDataContext : DbContext
     {
-        protected readonly IConfiguration _configuration;
-        public UsersDataContext(IConfiguration configuration)
+        public UsersDataContext()
         {
-            _configuration = configuration;
         }
 
         public UsersDataContext(DbContextOptions<UsersDataContext> options)
@@ -20,14 +16,6 @@ namespace Wchter.Entities.UsersData
         }
 
         public virtual DbSet<User> User { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer(_configuration.GetConnectionString("UsersData"));
-            }
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

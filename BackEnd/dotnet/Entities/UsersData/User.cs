@@ -15,7 +15,7 @@ namespace Wchter.Entities.UsersData
         public byte[] PasswordSalt { get; set; }
         public string EmailPersonal { get; set; }
         public byte[] ProfilePicture { get; set; }
-        public bool? IsActivated { get; set; }
+        public bool IsActivated { get; set; }
         public bool? Status { get; set; }
     }
 }

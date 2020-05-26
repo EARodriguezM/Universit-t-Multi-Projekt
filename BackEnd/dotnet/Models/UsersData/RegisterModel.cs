@@ -18,7 +18,5 @@ namespace Wchter.Models.UsersData
         public string Username { get; set; }
         [Required]
         public string EmailPersonal { get; set; }
-
-
     }
 }

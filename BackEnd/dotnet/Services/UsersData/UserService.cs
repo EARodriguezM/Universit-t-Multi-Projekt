@@ -15,10 +15,10 @@ namespace Wchter.Services.UsersData
         User Login(string username, string password);
         IEnumerable<User> GetUsers();
         User GetUser(string userId);
-        User Create(User user);
+        User Register(User user);
         User Activate(User user, string password);
-        bool Update(User userNewInfo, string oldPassword, string newPassword);
-        bool Delete(string userId);
+        void Update(User userNewInfo, string oldPassword, string newPassword);
+        void Delete(string userId);
     }
 
     public class UserService : IUserService
@@ -64,7 +64,7 @@ namespace Wchter.Services.UsersData
         }
 
         //POST
-        public User Create(User user)
+        public User Register(User user)
         {
             // validation
             if (_contextUsersData.User.Any(x => x.UserId == user.UserId))
@@ -121,7 +121,7 @@ namespace Wchter.Services.UsersData
         }
 
         //PUT
-        public bool Update(User userNewInfo, string oldPassword, string newPassword)
+        public void Update(User userNewInfo, string oldPassword, string newPassword)
         {
             var userToUpdate = _contextUsersData.User.Find(userNewInfo.UserId);
 
@@ -171,20 +171,18 @@ namespace Wchter.Services.UsersData
 
             _contextUsersData.User.Update(userToUpdate);
             _contextUsersData.SaveChanges();
-            return true;
         }
 
         //DELETE
-        public bool Delete(string userId)
+        public void Delete(string userId)
         {
             var user = _contextUsersData.User.Find(userId);
-            if (user != null)
-            {
-                _contextUsersData.User.Remove(user);
-                _contextUsersData.SaveChanges();
-                return true;
+            if (user == null)
+            {    
+                throw new AppException("the user don't exist");
             }
-            return false;
+            _contextUsersData.User.Remove(user);
+            _contextUsersData.SaveChanges();
         }
 
         // private helper methods

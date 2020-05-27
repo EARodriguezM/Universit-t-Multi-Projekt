@@ -22,6 +22,9 @@ using Wchter.Services.UsersData;
 using Wchter.Entities.WchterData;
 using Wchter.Helpers;
 
+using System.Security.Claims;
+
+
 namespace Wchter
 {
     public class Startup
@@ -58,9 +61,7 @@ namespace Wchter
                         {
                             var userService = context.HttpContext.RequestServices.GetRequiredService<IUserService>();
                             
-                            var identity = (System.Security.Claims.ClaimsPrincipal)System.Threading.Thread.CurrentPrincipal;
-                            var principal = System.Threading.Thread.CurrentPrincipal as System.Security.Claims.ClaimsPrincipal;
-                            var userId = identity.Claims.Where(c => c.Type == System.Security.Claims.ClaimTypes.NameIdentifier).Select(c => c.Value).SingleOrDefault();
+                            var userId = context.Principal.Claims.Where(c => c.Type == ClaimTypes.NameIdentifier).Select(c => c.Value).SingleOrDefault();/*"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier";*/
                             
                             var user = userService.GetUser(userId);
                             if (user == null)
